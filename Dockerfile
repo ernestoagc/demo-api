@@ -8,6 +8,6 @@ COPY src ./src
 RUN mvn clean install -DskipTests=true
 
 FROM openjdk:11.0.8-jre-slim
-COPY --from=builder /app/target/message-api-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=builder /app/target/demo-api-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 7400
 CMD ["java", "-jar","/app.jar"]
